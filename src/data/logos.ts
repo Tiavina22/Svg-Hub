@@ -91,7 +91,7 @@ export const logos: Logo[] = [
   },
   {
     id: '6',
-    name: 'Amazon Web Service',
+    name: 'AWS',
     category: 'Service',
     svg: `<svg width="68px" height="68px" viewBox="0 0 256 153" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
 		        <g>
