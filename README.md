@@ -4,7 +4,7 @@
 
 Accédez à une collection complète de logos SVG pour vos projets de développement. Téléchargez gratuitement des logos de haute qualité.
 
-## Technologies utilisées :
+## Technologies utilisées
 
 - Vite
 - TypeScript
