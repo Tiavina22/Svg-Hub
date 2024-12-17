@@ -45,7 +45,7 @@ const Index = () => {
               <span className="text-blue-400 font-medium">Collection Premium de Logos</span>
             </div>
             <h1 className="text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500">
-              Bibliothèque de Logos SVG
+              Bibliothèque de Logos SVG Hub
             </h1>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
               Accédez à une collection complète de logos SVG pour vos projets de développement. 
