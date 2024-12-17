@@ -19,5 +19,13 @@
     "categoriesDescription": "Explorez nos différentes catégories : Frameworks, Langages, Outils, et plus encore.",
     "usage": "Utilisation",
     "usageDescription": "Téléchargez et utilisez nos logos gratuitement dans vos projets personnels et commerciaux.",
-    "searchText": "Rechercher un logo..."
+    "searchText": "Rechercher un logo...",
+    "allCategories": "Tous",
+    "filtres": {
+    "Framework": "Framework",
+    "Langage": "Langage",
+    "Service": "Service",
+    "Database": "Base de données",
+    "Tool": "Outil"
+  }
   }
