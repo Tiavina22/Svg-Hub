@@ -51,7 +51,7 @@ const Index = () => {
               Accédez à une collection complète de logos SVG pour vos projets de développement. 
               Téléchargez gratuitement des logos de haute qualité.
             </p>
-            <div className="flex items-center justify-center space-x-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
               <Button 
                 size="lg"
                 onClick={scrollToLogos}
