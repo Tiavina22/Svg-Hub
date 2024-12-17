@@ -1,4 +1,4 @@
-export type LogoCategory = 'Framework' | 'Language' | 'Service' | 'Database' | 'Tool';
+export type LogoCategory = 'Framework' | 'Langage' | 'Service' | 'Database' | 'Tool';
 
 export interface Logo {
   id: string;

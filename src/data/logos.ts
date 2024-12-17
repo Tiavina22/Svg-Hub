@@ -51,7 +51,7 @@ export const logos: Logo[] = [
   {
     id: '4',
     name: 'Dart',
-    category: 'Language',
+    category: 'Langage',
     svg: `<svg width="68px" height="68px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
     <title>Dart</title>
     <defs>
