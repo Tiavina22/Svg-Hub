@@ -117,6 +117,13 @@ const Index = () => {
         </div>
       </div>
 
+      {/* Footer */}
+      <footer className="backdrop-blur-sm p-8 py-6 text-center">
+        <p className="text-gray-400 text-sm">
+          © {new Date().getFullYear()} Tiavina Ramilison.
+        </p>
+      </footer>
+
       {/* Dialog pour Explorer la collection */}
       <Dialog open={showDialog} onOpenChange={setShowDialog}>
         <DialogContent className="bg-gray-800 text-white border-gray-700">
