@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { SearchBar } from "@/components/SearchBar";
 import { CategoryFilter } from "@/components/CategoryFilter";
 import { LogoGrid } from "@/components/LogoGrid";
@@ -9,11 +10,25 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { useToast } from "@/components/ui/use-toast";
 
+import '../config/i18n';
+
 const Index = () => {
+
+  const { t, i18n } = useTranslation();
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<LogoCategory | null>(null);
   const [showDialog, setShowDialog] = useState(false);
   const { toast } = useToast();
+
+  useEffect(() => {
+    const storedLanguage = localStorage.getItem("language");
+    if (storedLanguage) {
+      i18n.changeLanguage(storedLanguage);
+    } else {
+      i18n.changeLanguage("fr");
+    }
+  }, [i18n]);
+
 
   const categories = Array.from(new Set(logos.map((logo) => logo.category)));
   
@@ -28,28 +43,53 @@ const Index = () => {
     if (logosSection) {
       logosSection.scrollIntoView({ behavior: "smooth" });
       toast({
-        title: "Bienvenue dans la collection !",
-        description: "Découvrez notre sélection de logos SVG premium.",
+        title: t("welcomeToastTitle"),
+        description: t("welcomeToastDescription"),
       });
     }
   };
 
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+    localStorage.setItem("language", lng);
+  };
+
+
   return (
     <div className="min-h-screen bg-gray-900 text-white">
+      {/* Langue switcher */}
+      <div className="absolute top-4 right-4 z-10 flex space-x-2">
+        <Button
+          onClick={() => changeLanguage("fr")}
+          className={`${
+            i18n.language === "fr" ? "bg-blue-600 text-white" : "bg-gray-800 text-gray-400"
+          } hover:bg-blue-700 transition-all duration-300`}
+        >
+          FR
+        </Button>
+        <Button
+          onClick={() => changeLanguage("en")}
+          className={`${
+            i18n.language === "en" ? "bg-blue-600 text-white" : "bg-gray-800 text-gray-400"
+          } hover:bg-blue-700 transition-all duration-300`}
+        >
+          EN
+        </Button>
+      </div>
+
       {/* Hero Section avec animation améliorée */}
       <div className="relative overflow-hidden bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 py-24">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-fade-in">
             <div className="flex items-center justify-center mb-4 space-x-2">
               <Sparkles className="w-6 h-6 text-blue-400" />
-              <span className="text-blue-400 font-medium">Collection Premium de Logos</span>
+              <span className="text-blue-400 font-medium">{t("premiumCollection")}</span>
             </div>
             <h1 className="text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500">
-              Bibliothèque de Logos SVG Hub
+              {t("heroTitle")}
             </h1>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Accédez à une collection complète de logos SVG pour vos projets de développement. 
-              Téléchargez gratuitement des logos de haute qualité.
+              {t("heroSubtitle")}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
               <Button 
@@ -57,7 +97,7 @@ const Index = () => {
                 onClick={scrollToLogos}
                 className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/20"
               >
-                Commencer maintenant <ArrowRight className="ml-2" />
+                {t("startNow")} <ArrowRight className="ml-2" />
               </Button>
               <Button 
                 size="lg"
@@ -65,7 +105,7 @@ const Index = () => {
                 onClick={() => setShowDialog(true)}
                 className="border-gray-700 text-gray-300 hover:bg-gray-800 font-semibold py-3 px-8 rounded-lg transition-all duration-300"
               >
-                Explorer la collection <Download className="ml-2 w-4 h-4" />
+                {t("exploreCollection")} <Download className="ml-2 w-4 h-4" />
               </Button>
             </div>
           </div>
@@ -76,22 +116,22 @@ const Index = () => {
               <div className="bg-blue-500/10 p-3 rounded-lg w-fit mb-4">
                 <Code className="w-6 h-6 text-blue-400" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Format SVG</h3>
-              <p className="text-gray-400">Logos vectoriels de haute qualité, parfaitement adaptables à tous vos projets.</p>
+              <h3 className="text-xl font-semibold mb-2">{t("svgFormat")}</h3>
+              <p className="text-gray-400">{t("svgDescription")}</p>
             </div>
             <div className="bg-gray-800/50 backdrop-blur-sm p-6 rounded-xl border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300">
               <div className="bg-purple-500/10 p-3 rounded-lg w-fit mb-4">
                 <Download className="w-6 h-6 text-purple-400" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Téléchargement Simple</h3>
-              <p className="text-gray-400">Téléchargez instantanément n'importe quel logo en un seul clic.</p>
+              <h3 className="text-xl font-semibold mb-2">{t("simpleDownload")}</h3>
+              <p className="text-gray-400">{t("downloadDescription")}</p>
             </div>
             <div className="bg-gray-800/50 backdrop-blur-sm p-6 rounded-xl border border-gray-700/50 hover:border-pink-500/50 transition-all duration-300">
               <div className="bg-pink-500/10 p-3 rounded-lg w-fit mb-4">
                 <Sparkles className="w-6 h-6 text-pink-400" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Collection Premium</h3>
-              <p className="text-gray-400">Une sélection soignée des meilleurs logos tech du moment.</p>
+              <h3 className="text-xl font-semibold mb-2">{t("premiumCollection")}</h3>
+              <p className="text-gray-400">{t("premiumDescription")}</p>
             </div>
           </div>
         </div>
@@ -129,26 +169,25 @@ const Index = () => {
         <DialogContent className="bg-gray-800 text-white border-gray-700">
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
-              Explorez notre Collection
+              {t("exploreDialogTitle")}
             </DialogTitle>
             <DialogDescription className="text-gray-300">
               <div className="space-y-4 mt-4">
                 <p>
-                  Notre collection comprend plus de {logos.length} logos SVG de haute qualité, 
-                  parfaits pour vos projets de développement.
+                  {t("exploreDialogDescription", { count: logos.length })}
                 </p>
                 <div className="grid grid-cols-1 gap-4">
                   <div className="bg-gray-700/50 p-4 rounded-lg">
-                    <h4 className="font-semibold text-blue-400 mb-2">Formats Disponibles</h4>
-                    <p>Tous nos logos sont disponibles en format SVG, garantissant une qualité optimale à toutes les tailles.</p>
+                    <h4 className="font-semibold text-blue-400 mb-2">{t("availableFormats")}</h4>
+                    <p>{t("formatsDescription")}</p>
                   </div>
                   <div className="bg-gray-700/50 p-4 rounded-lg">
-                    <h4 className="font-semibold text-purple-400 mb-2">Catégories</h4>
-                    <p>Explorez nos différentes catégories : Frameworks, Langages, Outils, et plus encore.</p>
+                    <h4 className="font-semibold text-purple-400 mb-2">{t("categories")}</h4>
+                    <p>{t("categoriesDescription")}</p>
                   </div>
                   <div className="bg-gray-700/50 p-4 rounded-lg">
-                    <h4 className="font-semibold text-pink-400 mb-2">Utilisation</h4>
-                    <p>Téléchargez et utilisez nos logos gratuitement dans vos projets personnels et commerciaux.</p>
+                    <h4 className="font-semibold text-pink-400 mb-2">{t("usage")}</h4>
+                    <p>{t("usageDescription")}</p>
                   </div>
                 </div>
               </div>

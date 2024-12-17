@@ -1,0 +1,22 @@
+{
+    "heroTitle": "SVG Logo Library Hub",
+    "heroSubtitle": "Access a comprehensive collection of SVG logos for your development projects. Download high-quality logos for free.",
+    "startNow": "Start Now",
+    "exploreCollection": "Explore the Collection",
+    "svgFormat": "SVG Format",
+    "svgDescription": "High-quality vector logos, perfectly adaptable to all your projects.",
+    "simpleDownload": "Simple Download",
+    "downloadDescription": "Download any logo instantly with just one click.",
+    "premiumCollection": "Premium Collection",
+    "premiumDescription": "A curated selection of the best tech logos of the moment.",
+    "welcomeToastTitle": "Welcome to the Collection!",
+    "welcomeToastDescription": "Discover our selection of premium SVG logos.",
+    "exploreDialogTitle": "Explore Our Collection",
+    "exploreDialogDescription": "Our collection includes over {{count}} high-quality SVG logos, perfect for your development projects.",
+    "availableFormats": "Available Formats",
+    "formatsDescription": "All our logos are available in SVG format, ensuring optimal quality at all sizes.",
+    "categories": "Categories",
+    "categoriesDescription": "Explore our different categories: Frameworks, Languages, Tools, and more.",
+    "usage": "Usage",
+    "usageDescription": "Download and use our logos for free in your personal and commercial projects."
+  }
