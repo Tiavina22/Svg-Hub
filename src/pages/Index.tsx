@@ -15,9 +15,9 @@ import '../config/i18n';
 const Index = () => {
 
   const { t, i18n } = useTranslation();
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState<string>("");
   const [selectedCategory, setSelectedCategory] = useState<LogoCategory | null>(null);
-  const [showDialog, setShowDialog] = useState(false);
+  const [showDialog, setShowDialog] = useState<boolean>(false);
   const { toast } = useToast();
 
   useEffect(() => {
@@ -39,7 +39,7 @@ const Index = () => {
   });
 
   const scrollToLogos = () => {
-    const logosSection = document.querySelector("#logos-section");
+    const logosSection = document.querySelector<HTMLElement>("#logos-section");
     if (logosSection) {
       logosSection.scrollIntoView({ behavior: "smooth" });
       toast({
