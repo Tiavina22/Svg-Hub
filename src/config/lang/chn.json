@@ -1,0 +1,31 @@
+{
+    "heroTitle": "SVG 标志库中心",
+    "heroSubtitle": "访问全面的 SVG 标志集合，为您的开发项目提供支持。免费下载高质量标志。",
+    "startNow": "立即开始",
+    "exploreCollection": "探索集合",
+    "svgFormat": "SVG 格式",
+    "svgDescription": "高质量的矢量标志，完美适应所有项目。",
+    "simpleDownload": "简单下载",
+    "downloadDescription": "只需一键即可立即下载任何标志。",
+    "premiumCollection": "高级集合",
+    "premiumDescription": "精选当下最佳技术标志。",
+    "welcomeToastTitle": "欢迎来到集合！",
+    "welcomeToastDescription": "探索我们精选的高级 SVG 标志。",
+    "exploreDialogTitle": "探索我们的集合",
+    "exploreDialogDescription": "我们的集合包含超过 {{count}} 个高质量的 SVG 标志，非常适合您的开发项目。",
+    "availableFormats": "可用格式",
+    "formatsDescription": "所有标志均提供 SVG 格式，确保在所有尺寸下都具有最佳质量。",
+    "categories": "分类",
+    "categoriesDescription": "探索我们的不同分类：框架、语言、工具等。",
+    "usage": "使用",
+    "usageDescription": "免费下载并使用我们的标志，适用于个人和商业项目。",
+    "allCategories": "全部",
+    "searchText": "搜索标志...",
+    "filtres": {
+        "Framework": "框架",
+        "Langage": "语言",
+        "Service": "服务",
+        "Database": "数据库",
+        "Tool": "工具"
+    }
+}
