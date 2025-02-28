@@ -3,6 +3,7 @@ import { initReactI18next } from "react-i18next";
 
 import translationFR from "./lang/fr.json";
 import translationEN from "./lang/en.json";
+import translationCHN from "./lang/chn.json";
 
 i18n
   .use(initReactI18next)
@@ -13,6 +14,9 @@ i18n
       },
       en: {
         translation: translationEN,
+      },
+      chn: {
+        translation: translationCHN,
       },
     },
     lng: "fr",
