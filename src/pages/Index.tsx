@@ -23,8 +23,12 @@ const Index = () => {
   useEffect(() => {
     const storedLanguage = localStorage.getItem("language");
     if (storedLanguage) {
+
       i18n.changeLanguage(storedLanguage);
-    } else {
+    }
+
+      
+     else {
       i18n.changeLanguage("fr");
     }
   }, [i18n]);
@@ -73,8 +77,16 @@ const Index = () => {
             i18n.language === "en" ? "bg-blue-600 text-white" : "bg-gray-800 text-gray-400"
           } hover:bg-blue-700 transition-all duration-300`}
         >
+    
           EN
         </Button>
+        <Button
+          onClick={() => changeLanguage("chn")}
+          className={`${
+            i18n.language === "chn" ? "bg-blue-600 text-white" : "bg-gray-800 text-gray-400"
+          } hover:bg-blue-700 transition-all duration-300`}
+        >
+中国</Button>
       </div>
 
       {/* Hero Section avec animation améliorée */}
